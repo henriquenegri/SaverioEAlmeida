@@ -1,0 +1,1007 @@
+/* Variáveis globais */
+:root {
+    --cor-principal-fundo: #2D2A22;
+    --cor-secundaria-linha: #3D4D3D;
+    --cor-destaque-texto: #C8A663;
+    --cor-texto-claro: #F3F0EB;
+
+    /* Variáveis para "Porque confiar..." */
+    --altura-linha-horizontal: 12px;
+    --tamanho-ponto: 30px;
+    --borda-ponto: 8px;
+    --espacamento-vertical-conteudo: 30px;
+    --largura-wrap-item: 250px;
+    --altura-minima-wrap-item: 350px;
+    --tamanho-icone-maior: 110px;
+
+    /* Variáveis para o modo card em mobile */
+    --card-background-mobile: #3A372E;
+    --card-border-radius: 10px;
+    --card-padding: 20px;
+}
+
+/* Tipografia Base */
+.titulo {
+    font-family: "Newsreader", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.corpoTexto {
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.textoPrinc {
+    font-size: 64px;
+}
+
+.pPrinc {
+    font-size: 24px;
+}
+
+/* Estilos gerais do corpo */
+body {
+    background-color: #2D2A22 !important;
+    color: #F3F0EB !important;
+}
+
+/* Botões gerais */
+.faleConosco, .textosApertoDeMao button {
+    background-color: #3D4D3D !important;
+    color: #F3F0EB !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #C8A663 !important; /* Estilo direto no HTML */
+}
+
+.navbar-brand {
+    color: #2D2A22 !important;
+}
+
+.navbar-nav .nav-link {
+    color: #2D2A22 !important;
+}
+
+.navbar .btn { /* Botão de contato na navbar */
+    color: #F3F0EB;
+    background-color: #3D4D3D;
+    border-color: #3D4D3D; /* Define a cor da borda para combinar */
+}
+
+.btn:hover,
+.btn-outline-dark:hover {
+    background-color: #3D4D3D !important;
+    color: #F3F0EB !important;
+    border-color: none !important; /* Corrigido de 'none' para 'transparent' ou a cor do background */
+    box-shadow: none !important;
+}
+
+/* Início da Página (Hero Section) */
+.inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 5rem;
+    margin-bottom: -1rem;
+}
+
+.textInicio {
+    color: #F3F0EB;
+    flex: 1;
+    min-width: 280px;
+}
+
+.imgInicio {
+    flex: 1;
+    min-width: 580px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+}
+
+.imgInicio img {
+    width: auto;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
+    margin-right: -2rem;
+}
+
+/* Áreas de Atuação (Carrossel) */
+.AreasAtuacao {
+    position: relative;
+    background-color: #2D2A22;
+    color: #F3F0EB;
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+
+.background-image {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.background-image img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.background-image h1 {
+    position: relative;
+    z-index: 2;
+    color: #F3F0EB;
+    font-family: 'Newsreader', serif;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carrossel-areas {
+    color: #F3F0EB;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.carrossel {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carrossel::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 300px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    scroll-snap-align: start;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1C1A16;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.carrossel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 3rem;
+}
+
+.scroll-btn {
+    position: absolute;
+    z-index: 3;
+    background: rgba(45, 42, 34, 0.8);
+    color: #F3F0EB;
+    border: none;
+    font-size: 2rem;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 8px;
+    transition: background 0.2s;
+    margin: 0 10px;
+}
+
+.scroll-btn:hover {
+    background: rgba(200, 166, 99, 0.8);
+}
+
+.scroll-btn.left {
+    left: 0;
+}
+
+.scroll-btn.right {
+    right: 0;
+}
+
+
+/* Porque Confiar na nossa atuação? (Linha do Tempo) */
+.linha-tempo {
+    background-color: var(--cor-principal-fundo);
+    color: var(--cor-texto-claro);
+    font-family: 'Georgia', serif;
+    padding: 3rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+
+.linha-tempo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 7rem;
+    margin-top: 5rem;
+}
+
+.linha {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    flex-wrap: wrap;
+    padding: 0 40px;
+}
+
+.linha::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 100%;
+    height: var(--altura-linha-horizontal);
+    background-color: var(--cor-secundaria-linha);
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.wrap-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex-shrink: 0;
+    width: var(--largura-wrap-item);
+    min-height: var(--altura-minima-wrap-item);
+    justify-content: center;
+}
+
+.linha-ponto {
+    width: var(--tamanho-ponto);
+    height: var(--tamanho-ponto);
+    background-color: var(--cor-principal-fundo);
+    border: var(--borda-ponto) solid var(--cor-secundaria-linha);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.item-superior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: calc(50% + (var(--tamanho-ponto) / 2) + var(--espacamento-vertical-conteudo));
+    width: 100%;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+
+.item-superior .icone img {
+    width: var(--tamanho-icone-maior);
+    height: var(--tamanho-icone-maior);
+    margin-bottom: 1rem;
+}
+
+.item-superior h3 {
+    color: var(--cor-destaque-texto);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.item-inferior {
+    position: absolute;
+    top: calc(50% + (var(--tamanho-ponto) / 2) + var(--espacamento-vertical-conteudo));
+    width: 100%;
+    padding-top: 10px;
+    z-index: 1;
+}
+
+.item-inferior p {
+    color: var(--cor-destaque-texto);
+    font-size: 1.3rem;
+    line-height: 1.5;
+    padding: 0 15px;
+}
+
+/* Regra mais específica para as imagens de ícone que você tem */
+.imgConfia {
+    width: var(--tamanho-icone-maior); /* Removido !important para melhor gerenciamento */
+    height: var(--tamanho-icone-maior); /* Removido !important */
+}
+.item-superior .icone img[alt="Imagem com uma balança do direito"] {
+    width: var(--tamanho-icone-maior) !important; /* Mantido aqui pois tem estilo inline */
+    height: var(--tamanho-icone-maior) !important; /* Mantido aqui pois tem estilo inline */
+}
+
+
+/* Escritório Especializado em Direito Penal */
+.escritorioEspecializado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    flex-wrap: wrap;
+    gap: 10rem;
+    background-color: #2D2A22;
+}
+
+.escritorioEspecializado .imagem {
+    flex-shrink: 0;
+    max-width: 50%; /* Permite que a imagem ocupe até metade da largura disponível */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0; /* Remover padding-right se o gap já for suficiente */
+}
+
+.apertoMao {
+    height: auto;
+    width: 100%;
+    max-width: 600px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.textosApertoDeMao {
+    flex-grow: 1;
+    min-width: 450px; /* Aumentei o min-width para o texto para garantir que ele não fique muito estreito */
+    max-width: 600px; /* Adicionei max-width para limitar a largura do texto, deixando mais espaço */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 0; /* Removendo margin-left fixo, o gap já fará o espaçamento */
+    justify-content: center; /* Centraliza verticalmente o conteúdo (título, p, botão) */
+    align-items: flex-start; /* Alinha os itens (título, p, botão) à esquerda dentro de sua coluna */
+}
+
+.tituloAperto {
+    color: #F3F0EB;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 9rem;
+    align-self: flex-start;
+    text-align: left;
+}
+
+.textosApertoDeMao p {
+    color: #F3F0EB;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+}
+
+/* Integrantes da Sociedade */
+.integranteSociedade {
+    margin-top: 5rem;
+    padding: 2rem 1rem;
+    background-color: var(--cor-principal-fundo);
+    color: var(--cor-texto-claro);
+    font-family: 'Georgia', serif;
+}
+
+.tituloIntSoc {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--cor-destaque-texto);
+}
+
+.integrantes-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem; /* Reduzido de 15rem para algo mais gerenciável */
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.perfil-integrante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #1C1A16;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    min-width: 280px;
+    max-width: 350px;
+    flex: 1 1 auto;
+}
+
+.perfil-integrante .imagem {
+    margin-bottom: 1.5rem;
+}
+
+.perfil-integrante .img {
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10%;
+    border: 5px solid var(--cor-secundaria-linha);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.texto-integrante {
+    width: 100%;
+}
+
+.nome-advogado {
+    color: var(--cor-destaque-texto);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.info-advogado {
+    color: var(--cor-texto-claro);
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Notícias Recentes */
+.noticiasRecentes {
+    margin-top: 5rem;
+    padding: 2rem 1rem;
+    background-color: var(--cor-principal-fundo);
+    color: var(--cor-texto-claro);
+    font-family: 'Georgia', serif;
+}
+
+.tituloNoticias {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--cor-destaque-texto);
+}
+
+.link-noticia {
+    text-decoration: none;
+    color: inherit;
+}
+
+.noticias-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.snip1418 {
+    font-family: 'Georgia', serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px; /* Margem EXTERNA do card */
+    min-width: 300px;
+    max-width: 350px;
+    width: 100%;
+    background: #3D4D3D;
+    text-align: left;
+    border-radius: 8px;
+    flex: 1 1 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.snip1418:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.snip1418 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.snip1418 img {
+    width: 100%;
+    display: block;
+    opacity: 1;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.snip1418 figcaption {
+    position: relative;
+    padding: 1.5rem;
+    background-color: #3D4D3D;
+    color: var(--cor-texto-claro);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.snip1418 h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--cor-destaque-texto);
+    line-height: 1.3;
+}
+
+.snip1418 p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* Footer */
+.footer {
+    background-color: #C8A663;
+    color: #2D2A22;
+    padding: 0.2rem 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo img {
+    margin: 1rem 0 1rem 0;
+    width: 50px;
+    height: 55px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-item {
+    text-align: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-item img {
+    width: 32px;
+    height: 32px;
+    color: #2D2A22; /* Esta regra não faz sentido para SVG/PNG, CSS não muda a cor de pixels de imagem diretamente */
+}
+
+@media (max-width: 992px) { /* Breakpoint para tablets e desktops menores */
+    .textoPrinc {
+        font-size: 48px;
+    }
+
+    .pPrinc {
+        font-size: 20px;
+    }
+
+    .inicio {
+        flex-direction: column; /* Empilha texto e imagem */
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .textInicio {
+        min-width: unset; /* Remove min-width fixo */
+        width: 100%;
+        margin-bottom: 2rem; /* Espaçamento entre texto e imagem */
+    }
+
+    .imgInicio {
+        min-width: unset; /* Remove min-width fixo */
+        width: 100%;
+        justify-content: center; /* Centraliza a imagem */
+        margin-right: 0; /* Remove margem negativa */
+    }
+
+    .imgInicio img {
+        max-width: 80%; /* Reduz o tamanho da imagem */
+        height: auto;
+    }
+
+    .faleConosco {
+        width: 100%; /* Botão ocupa a largura total */
+        max-width: 250px; /* Limita o tamanho máximo */
+        margin: 0 auto; /* Centraliza o botão */
+        font-size: medium;
+    }
+
+    .background-image h1 {
+        font-size: 2.5rem;
+    }
+
+    .carrossel-wrapper {
+        padding: 0 1rem;
+    }
+
+    .scroll-btn {
+        font-size: 1.8rem;
+        padding: 0.2rem 0.6rem;
+    }
+
+    .card {
+        min-width: 250px; /* Ajusta o tamanho mínimo do card */
+        height: auto;
+    }
+
+    .card img {
+        height: 300px; /* Ajusta a altura da imagem no carrossel */
+    }
+
+    .escritorioEspecializado {
+        flex-direction: column; /* Empilha imagem e texto */
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .escritorioEspecializado .imagem {
+        width: 90%;
+        max-width: 500px; /* Limita o tamanho da imagem */
+        margin-bottom: 2rem;
+    }
+
+    .apertoMao {
+        max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner pai */
+    }
+
+    .textosApertoDeMao {
+        margin-left: 0; /* Remove margem esquerda */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .tituloAperto {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .textosApertoDeMao p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .textosApertoDeMao button {
+        align-self: center; /* Centraliza o botão */
+        margin-top: 1.5rem;
+    }
+
+    .integrantes-grid {
+        gap: 2rem; /* Reduz o gap entre os integrantes */
+    }
+
+    .perfil-integrante {
+        min-width: 250px;
+        max-width: 320px;
+    }
+
+    .perfil-integrante .img {
+        width: 200px;
+        height: 250px;
+    }
+
+    .nome-advogado {
+        font-size: 1.5rem;
+    }
+
+    .info-advogado {
+        font-size: 1rem;
+    }
+
+    .noticias-grid {
+        gap: 2rem; /* Reduz o gap entre as notícias */
+    }
+
+    .snip1418 {
+        min-width: 280px;
+        max-width: 320px;
+        margin: 10px auto; /* Centraliza os cards */
+    }
+
+    .snip1418 img {
+        height: 180px;
+    }
+
+    .snip1418 h3 {
+        font-size: 1.3rem;
+    }
+
+    .snip1418 p {
+        font-size: 0.9rem;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Empilha logo e links */
+        gap: 5px;
+    }
+
+    .footer-links {
+        gap: 1rem; /* Ajusta o gap entre os links do footer */
+        flex-direction: column;
+        width: 100%; /* Ocupa a largura total para os links se centralizarem */
+    }
+
+    .footer-item {
+        font-size: 1.1rem;
+    }
+}
+
+
+@media (max-width: 768px) { /* Breakpoint para celulares e tablets em modo retrato */
+    /* Porque Confiar na nossa atuação? (Linha do Tempo) - LAYOUT DE CARDS */
+    .linha-tempo h1 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+
+    /* OCULTAR A LINHA HORIZONTAL (AUMENTANDO ESPECIFICIDADE) */
+    .linha-tempo .linha::before {
+        display: none;
+    }
+
+    .linha {
+        flex-direction: column; /* Empilha os cards verticalmente */
+        gap: 1.5rem; /* Espaçamento entre os cards */
+        padding: 0 15px; /* Ajusta o padding lateral do contêiner */
+    }
+
+    /* OCULTAR OS PONTOS DA LINHA DO TEMPO (AUMENTANDO ESPECIFICIDADE) */
+    .wrap-item .linha-ponto {
+        display: none;
+    }
+
+    .wrap-item {
+        width: 100%; /* Cada card ocupa a largura total disponível */
+        max-width: 350px; /* Limita a largura máxima para mobile */
+        min-height: auto; /* A altura se ajusta ao conteúdo */
+        background-color: var(--card-background-mobile);
+        border-radius: var(--card-border-radius);
+        padding: var(--card-padding);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 0 auto; /* Centraliza o card */
+        flex-direction: column; /* Garante que os itens dentro do card fiquem em coluna */
+        justify-content: flex-start;
+        align-items: center; /* Centraliza conteúdo dentro do card */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Redefinir posicionamento para os itens dentro do card */
+    .item-superior {
+        position: static; /* Remove posicionamento absoluto */
+        width: auto;
+        padding-bottom: 0;
+        margin-bottom: 0.8rem; /* Espaçamento entre título e ícone */
+        flex-direction: column;
+    }
+
+    .item-superior .icone img {
+        width: 70px; /* Reduz o tamanho do ícone para mobile */
+        height: 70px;
+        margin-bottom: 0.6rem;
+    }
+
+    .item-superior h3 {
+        font-size: 1.2rem; /* Reduz o tamanho do título */
+    }
+
+    .item-inferior {
+        position: static; /* Remove posicionamento absoluto */
+        width: auto;
+        padding-top: 0;
+    }
+
+    .item-inferior p {
+        font-size: 1rem; /* Reduz o tamanho do texto do corpo */
+        padding: 0;
+    }
+
+    /* Ajuste para imagens dos cards de confiança no mobile (se houver estilo inline ou !important) */
+    .imgConfia {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    .item-superior .icone img[alt="Imagem com uma balança do direito"] {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+
+    /* Áreas de Atuação (Carrossel) */
+    .AreasAtuacao {
+        padding-bottom: 2rem;
+    }
+    .background-image h1 {
+        font-size: 2rem;
+    }
+    .carrossel-wrapper {
+        padding: 0 0.5rem; /* Menos padding nas laterais para mobile */
+    }
+    .scroll-btn {
+        font-size: 1.5rem;
+        padding: 0.2rem 0.5rem;
+        margin: 0 5px; /* Ajusta margem dos botões */
+    }
+    .card {
+        min-width: 250px; /* Tamanho mínimo para mobile */
+        height: auto;
+        margin: 0 auto; /* Centraliza os cards se não estiverem cheios */
+    }
+    .card img {
+        height: 250px; /* Reduz a altura da imagem do card */
+    }
+
+    /* Integrantes da Sociedade */
+    .integranteSociedade {
+        margin-top: 2rem;
+        padding: 1rem 0.5rem;
+    }
+    .tituloIntSoc {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .integrantes-grid {
+        gap: 1.5rem;
+    }
+    .perfil-integrante {
+        width: 95%; /* Ocupa mais largura */
+        max-width: 280px;
+        padding: 1rem;
+    }
+    .perfil-integrante .img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%; /* Faz a imagem redonda, se desejar */
+    }
+    .nome-advogado {
+        font-size: 1.3rem;
+    }
+    .info-advogado {
+        font-size: 0.9rem;
+    }
+
+    /* Notícias Recentes */
+    .noticiasRecentes {
+        margin-top: 2rem;
+        padding: 1rem 0.5rem;
+    }
+    .tituloNoticias {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .noticias-grid {
+        gap: 1rem;
+    }
+    .snip1418 {
+        width: 95%;
+        max-width: 320px;
+        margin: 10px auto;
+    }
+    .snip1418 img {
+        height: 120px;
+    }
+    .snip1418 h3 {
+        font-size: 1.1rem;
+    }
+    .snip1418 p {
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 0.5rem;
+    }
+    .footer-logo img {
+        width: 70px;
+        height: 80px;
+    }
+    .footer-links {
+        gap: 0.8rem;
+    }
+    .footer-item {
+        font-size: 1rem;
+    }
+    .footer-item img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (ex: iPhones 5/SE, larguras abaixo de 480px) */
+@media (max-width: 480px) {
+    .textoPrinc {
+        font-size: 38px;
+    }
+    .pPrinc {
+        font-size: 18px;
+    }
+    .background-image h1 {
+        font-size: 1.8rem;
+    }
+    .tituloAperto {
+        font-size: 1.6rem;
+    }
+    .textosApertoDeMao p {
+        font-size: 1rem;
+    }
+    .tituloIntSoc, .tituloNoticias {
+        font-size: 1.6rem;
+    }
+    .perfil-integrante .img {
+        width: 100px;
+        height: 100px;
+    }
+    .nome-advogado {
+        font-size: 1.2rem;
+    }
+    .info-advogado {
+        font-size: 0.85rem;
+    }
+    .snip1418 h3 {
+        font-size: 1rem;
+    }
+    .snip1418 p {
+        font-size: 0.75rem;
+    }
+    .footer-item {
+        font-size: 0.9rem;
+    }
+    .footer-item img {
+        width: 24px;
+        height: 24px;
+    }
+}

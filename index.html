@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>Savério e Almeida</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #C8A663;">
+        <div class="container-fluid">
+            <a class="navbar-brand titulo" href="#">
+                <img src="/src/Logo.png" alt="Logo" width="45" height="45" class="d-inline-block align-text-center">
+                Saverio e Almeida
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#escritorioEspecializado">Quem Somos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-dark ms-2" href="https://wa.me/+5516996356629">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Inicio-->
+    <div class="inicio">
+        <div class="textInicio">
+            <h1 class="titulo textoPrinc">Saverio e Almeida</h1>
+            <p class="corpoTexto pPrinc">Na busca pela verdade, atuamos com <br>
+                coragem, ética e responsabilidade
+            </p>
+            <a class="faleConosco btn corpoTexto" type="button" href="https://wa.me/+5516996356629" target="_blank"
+            style="width: 200px; height: 50px; font-size: large; text-align: center;">FALE CONOSCO</a>
+        </div>
+        <div class="imgInicio">
+            <img src="/src/SimboloDeDireito.png" alt="estátua com uma venda nos olhos segurando uma balança que representa o direito">
+        </div>
+    </div>
+
+    <!--Áreas de Atuação-->
+    <div class="AreasAtuacao" id="servicos">
+        <section class="carrossel-areas">
+            <div class="background-image">
+                <img src="/src/mascarabalancas.png" alt="várias balanças do direito desfocadas">
+                <h1 class="titulo textoPrinc">Áreas de Atuação</h1>
+            </div>
+            <div class="carrossel-wrapper">
+                <button class="scroll-btn left">&larr;</button>
+                <div class="carrossel" id="carrossel">
+                    <div class="card">
+                        <img src="/src/acompanhamentoADelegacia.png" alt="Acompanhamento Delegacia">
+                    </div>
+                    <div class="card">
+                        <img src="/src/direito penal.png" alt="Direito Penal">
+                    </div>
+                    <div class="card">
+                        <img src="/src/ProcessoCriminal.png" alt="Processo Criminal">
+                    </div>
+                    <div class="card">
+                        <img src="/src/habeasCorpus.png" alt="Habeas Corpus">
+                    </div>
+                    <div class="card">
+                        <img src="/src/prisaoEmFlagrante.png" alt="Prisão em Flagrante">
+                    </div>
+                </div>
+                <button class="scroll-btn right">&rarr;</button>
+            </div>
+        </section>
+    </div>
+
+    <!--Por que Confiar na nossa atuação-->
+    <section class="linha-tempo">
+        <div class="container">
+            <h1 class="titulo" style="margin-bottom: 7rem; margin-top: 5rem;">Porque Confiar na <br>nossa atuação?</h1>
+            <div class="linha">
+                <div class="wrap-item">
+                    <div class="item item-superior">
+                        <div class="icone">
+                            <img src="/src/shield-checked.png" class="imgConfia" alt="Prisão em Flagrante">
+                        </div>
+                        <br>
+                        <h3 class="titulo">Ética</h3>
+                    </div>
+                    <div class="linha-ponto"></div>
+                    <div class="item item-inferior">
+                        <p class="corpoTexto">Atuação ética<br>e responsável</p>
+                    </div>
+                </div>
+                <div class="wrap-item">
+                    <div class="item item-superior">
+                        <div class="icone">
+                            <img src="/src/balancaDireito.svg" style="width: 120px; height: 120px;" alt="Imagem com uma balança do direito">
+                        </div>
+                        <br>
+                        <h3 class="titulo">Transparência</h3>
+                    </div>
+                    <div class="linha-ponto"></div>
+                    <div class="item item-inferior">
+                        <p class="corpoTexto">Todo processo<br>de atuação</p>
+                    </div>
+                </div>
+                <div class="wrap-item">
+                    <div class="item item-superior">
+                        <div class="icone">
+                            <img src="/src/eyes.png" class="imgConfia" alt="Imagem de olho">
+                        </div>
+                        <br>
+                        <h3 class="titulo">Experiência</h3>
+                    </div>
+                    <div class="linha-ponto"></div>
+                    <div class="item item-inferior">
+                        <p class="corpoTexto">Advogados<br>com mais de 10 anos</p>
+                    </div>
+                </div>
+                <div class="wrap-item">
+                    <div class="item item-superior">
+                        <div class="icone">
+                            <img src="/src/clocked.png" class="imgConfia" alt="Imagem de relógio">
+                        </div>
+                        <br>
+                        <h3 class="titulo">Disponibilidade</h3>
+                    </div>
+                    <div class="linha-ponto"></div>
+                    <div class="item item-inferior">
+                        <p class="corpoTexto">Atendimento<br>24 horas por dia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Texto-->
+    <div class="escritorioEspecializado" id="escritorioEspecializado">
+        <div class="imagem">
+            <img src="/src/apertodemão.png" class="apertoMao" alt="Duas pessoas apertando suas mãos">
+        </div>
+        <div class="textosApertoDeMao">
+            <h1 class="tituloAperto titulo">Escritório Especializado em<br> Direito Penal</h1>
+
+            <p class="corpoTexto">O escritório atua de forma estratégica e
+                personalizada na defesa dos direitos e garantias
+                fundamentais de seus clientes, com foco exclusivo
+                na área penal. Nosso compromisso é oferecer uma
+                atuação ética, técnica e combativa em todas as
+                fases do processo criminal, com atenção
+                individualizada a cada caso.
+                Nosso propósito é garantir uma defesa penal
+                técnica, humana e comprometida com os princípios
+                constitucionais da ampla defesa e do devido
+                processo legal.
+            </p>
+        </div>
+    </div>
+
+    <!--Integrantes Sociedade-->
+    <div class="integranteSociedade" id="integranteSociedade">
+        <div class="tituloIntSoc">
+            <h1 class="titulo textoPrinc">Integrantes da Sociedade</h1>
+        </div>
+
+        <div class="integrantes-grid">
+            <div class="perfil-integrante">
+                <div class="imagem">
+                    <img class="img" src="/src/imgRenato.jpg" alt="Foto do Dr. Renato Saverio Souza Costa">
+                </div>
+                <div class="texto-integrante">
+                    <h2 class="nome-advogado titulo">Dr. Renato Saverio Souza Costa</h2>
+                    <p class="info-advogado corpoTexto">Advogado<br>OAB/SP 244.018</p>
+                </div>
+            </div>
+
+            <div class="perfil-integrante">
+                <div class="imagem">
+                    <img class="img" src="/src/imgCayro.jpg" alt="Foto do Dr. Cayro Diego de Almeida Souza">
+                </div>
+                <div class="texto-integrante">
+                    <h2 class="nome-advogado titulo">Dr. Cayro Diego de Almeida Souza</h2>
+                    <p class="info-advogado corpoTexto">Advogado<br>OAB/SP 532.352</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Notícias-->
+    <div class="noticiasRecentes">
+        <div class="tituloNoticias">
+            <h1 class="titulo textoPrinc">Notícias mais Recentes</h1>
+        </div>
+        <div class="noticias-grid">
+            <a href="https://www.maisgoias.com.br/cidades/juri-absolve-prefeito-de-mara-rosa-acusado-de-tentar-matar-irmao/amp/" class="link-noticia" target="_blank">
+                <figure class="snip1418">
+                    <img src="/src/noticia1.jpg" alt="" />
+                    <figcaption>
+                        <h3 class="titulo">Júri absolve prefeito de Mara Rosa acusado de tentar matar irmão</h3>
+                        <p class="corpoTexto">O Tribunal do Júri em Ceres absolveu o prefeito de Mara Rosa, Flávio Divino Maurício...</p>
+                    </figcaption>
+                </figure>
+            </a>
+
+            <a href="https://www.defensoria.df.gov.br/?p=47209" class="link-noticia" target="_blank">
+                <figure class="snip1418 hover">
+                    <img src="/src/noticia2.jpg" alt="" />
+                    <figcaption>
+                        <h3 class="titulo">Jovem que ficou preso injustamente durante quase 3 anos é liberado</h3>
+                        <p class="corpoTexto">A Defensoria Pública do Distrito Federal (DPDF), por meio do Núcleo de Assistência Jurídica do Segundo Grau e Tribunais Superiores,
+                                            obteve no Tribunal de Justiça do Distrito Federal e Territórios (TJDFT) a absolvição de Lucas Moreira de Souza...
+                        </p>
+                    </figcaption>
+                </figure>
+            </a>
+
+            <a href="https://cj.estrategia.com/portal/regime-aberto-substituicao-pena-trafico-privilegiado/" class="link-noticia" target="_blank">
+                <figure class="snip1418">
+                    <img src="/src/noticia3.jpg" alt="" />
+                    <figcaption>
+                        <h3 class="titulo">Nova súmula vinculante: regime aberto e substituição de pena para tráfico privilegiado</h3>
+                        <p class="corpoTexto">O STF aprovou, dia 19 de outubro de 2023, uma súmula vinculante envolvendo aspectos da condenação do chamado tráfico privilegiado...</p>
+                    </figcaption>
+                </figure>
+            </a>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-logo">
+                <img src="/src/Logo.png" alt="SA Advocacia Criminalistica Logo" class="footer-logo">
+            </div>
+
+            <div class="footer-links">
+                <a class="footer-item" href="#servicos">Serviços</a>
+                <div class="footer-item">
+                    <a href="https://www.instagram.com/saverioealmeida/" target="_blank">
+                        <img src="/src/instagram.svg" alt="Instagram" />
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <a href="https://wa.me/+5516996356629" target="_blank">
+                        <img src="/src/whatsapp.svg" alt="WhatsApp" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var url = 'https://cdn.waplus.io/waplus-crm/settings/ossembed.js';
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = url;
+        var options = {
+            "enabled": true,
+            "chatButtonSetting": {
+                "backgroundColor": "#3D4D3D",
+                "ctaText": "Fale Conosco",
+                "borderRadius": "10",
+                "marginLeft": "20",
+                "marginBottom": "80",
+                "marginRight": "20",
+                "position": "right",
+                "textColor": "#F3F0EB",
+                "phoneNumber": "+5516996356629",
+                "messageText": "",
+                "trackClick": true
+            }
+        }
+        s.onload = function() {
+            CreateWhatsappBtn(options);
+        };
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+    </script>
+
+    <script>
+        const carrossel = document.getElementById('carrossel');
+        const leftBtn = document.querySelector('.scroll-btn.left');
+        const rightBtn = document.querySelector('.scroll-btn.right');
+
+        leftBtn.addEventListener('click', () => {
+            carrossel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+
+        rightBtn.addEventListener('click', () => {
+            carrossel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
