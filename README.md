@@ -1,6 +1,4 @@
 ⚖️ Savério e Almeida - Advocacia Criminalística Digital 🌐
-![Banner animado ou GIF do site rodando em um celular e um desktop, ou uma balança da justiça com neon pulsante]
-(Imagine aqui um GIF ou uma imagem divertida do seu site em ação, com elementos gráficos de neon ou algo que capture a vibe "justiça moderna")
 
 Boas-vindas, Nobre Cavalheiro/Dama do Código! 👋
 Prepare-se para testemunhar a revolução digital no mundo do Direito Penal! Este não é apenas um site; é a materialização do compromisso, da ética e da coragem dos advogados Savério e Almeida, agora acessível na palma da sua mão (e em qualquer tela!).
