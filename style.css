@@ -20,6 +20,24 @@
     --card-padding: 20px;
 }
 
+/* Adicione este bloco no início do seu style.css, antes de qualquer outra regra */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Garante que ocupem 100% da largura do viewport */
+    overflow-x: hidden; /* ESSENCIAL: Impede rolagem horizontal em todo o site */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2D2A22 !important;
+    color: #F3F0EB !important;
+    /* Remover o 'width: 100%' daqui se já estiver no html, body acima */
+}
+
 /* Tipografia Base */
 .titulo {
     font-family: "Newsreader", serif;
@@ -189,7 +207,6 @@ body {
 }
 
 .card {
-    min-width: 300px;
     flex: 0 0 auto;
     border-radius: 12px;
     scroll-snap-align: start;
@@ -199,7 +216,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #1C1A16;
+    background-color: var(--cor-principal-fundo);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -214,13 +231,14 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 0 3rem;
+    box-sizing: border-box;
+    background-color: transparent !important;
 }
 
 .scroll-btn {
     position: absolute;
     z-index: 3;
-    background: rgba(45, 42, 34, 0.8);
+    background: var(--cor-principal-fundo);
     color: #F3F0EB;
     border: none;
     font-size: 2rem;
@@ -351,33 +369,33 @@ body {
 
 /* Regra mais específica para as imagens de ícone que você tem */
 .imgConfia {
-    width: var(--tamanho-icone-maior); /* Removido !important para melhor gerenciamento */
-    height: var(--tamanho-icone-maior); /* Removido !important */
+    width: var(--tamanho-icone-maior);
+    height: var(--tamanho-icone-maior);
 }
 .item-superior .icone img[alt="Imagem com uma balança do direito"] {
-    width: var(--tamanho-icone-maior) !important; /* Mantido aqui pois tem estilo inline */
-    height: var(--tamanho-icone-maior) !important; /* Mantido aqui pois tem estilo inline */
+    width: var(--tamanho-icone-maior) !important;
+    height: var(--tamanho-icone-maior) !important;
 }
 
 
 /* Escritório Especializado em Direito Penal */
 .escritorioEspecializado {
     display: flex;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     padding: 3rem 2rem;
     flex-wrap: wrap;
-    gap: 10rem;
+    gap: 4rem;
     background-color: #2D2A22;
 }
 
 .escritorioEspecializado .imagem {
     flex-shrink: 0;
-    max-width: 50%; /* Permite que a imagem ocupe até metade da largura disponível */
+    max-width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 0; /* Remover padding-right se o gap já for suficiente */
+    padding-right: 0;
 }
 
 .apertoMao {
@@ -392,14 +410,14 @@ body {
 
 .textosApertoDeMao {
     flex-grow: 1;
-    min-width: 450px; /* Aumentei o min-width para o texto para garantir que ele não fique muito estreito */
-    max-width: 600px; /* Adicionei max-width para limitar a largura do texto, deixando mais espaço */
+    min-width: 450px;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-left: 0; /* Removendo margin-left fixo, o gap já fará o espaçamento */
-    justify-content: center; /* Centraliza verticalmente o conteúdo (título, p, botão) */
-    align-items: flex-start; /* Alinha os itens (título, p, botão) à esquerda dentro de sua coluna */
+    margin-left: 0;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .tituloAperto {
@@ -416,6 +434,7 @@ body {
     font-size: 1.5rem;
     line-height: 1.5;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
 /* Integrantes da Sociedade */
@@ -438,7 +457,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 3rem; /* Reduzido de 15rem para algo mais gerenciável */
+    gap: 3rem;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
@@ -523,7 +542,7 @@ body {
     font-family: 'Georgia', serif;
     position: relative;
     overflow: hidden;
-    margin: 10px; /* Margem EXTERNA do card */
+    margin: 10px;
     min-width: 300px;
     max-width: 350px;
     width: 100%;
@@ -618,22 +637,50 @@ body {
 .footer-item img {
     width: 32px;
     height: 32px;
-    color: #2D2A22; /* Esta regra não faz sentido para SVG/PNG, CSS não muda a cor de pixels de imagem diretamente */
+    color: #2D2A22;
 }
 
-@media (max-width: 992px) { /* Breakpoint para tablets e desktops menores */
+/* Botão Flutuante do WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background-color: #3D4D3D;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.08);
+}
+
+.whatsapp-float .whatsapp-icon {
+    width: 35px;
+    height: 35px;
+    filter: invert(100%);
+}
+
+@media (max-width: 992px) 
+{
     .textoPrinc {
-        font-size: 48px;
+        font-size: 3rem;
     }
 
     .pPrinc {
-        font-size: 20px;
+        font-size: 1.25rem;
     }
 
     .inicio {
-        flex-direction: column; /* Empilha texto e imagem */
-        text-align: center;
         padding: 2rem 1rem;
+        gap: 1.5rem;
     }
 
     .textInicio {
@@ -670,24 +717,42 @@ body {
     }
 
     .scroll-btn {
-        font-size: 1.8rem;
-        padding: 0.2rem 0.6rem;
+        padding: 0.5rem;
+        width: auto;
+        height: auto;
+        min-width: unset;
+        min-height: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
     }
 
     .card {
-        min-width: 250px; /* Ajusta o tamanho mínimo do card */
-        height: auto;
+        width: 90%;
+        max-width: 300px;
+        min-width: unset;
+        scroll-snap-align: center;
+        margin: 0 auto;
     }
 
     .card img {
-        height: 300px; /* Ajusta a altura da imagem no carrossel */
+        height: 300px;
+    }
+
+    .scroll-btn.left {
+        left: 0.5rem;
+        border-radius: 8px;
+    }
+    .scroll-btn.right {
+        right: 0.5rem;
+        border-radius: 8px;
     }
 
     .escritorioEspecializado {
         flex-direction: column; /* Empilha imagem e texto */
         align-items: center;
         text-align: center;
-        padding: 2rem 1rem;
     }
 
     .escritorioEspecializado .imagem {
@@ -701,18 +766,16 @@ body {
     }
 
     .textosApertoDeMao {
-        margin-left: 0; /* Remove margem esquerda */
         text-align: center; /* Centraliza o texto */
+        align-items: center;
     }
 
     .tituloAperto {
         font-size: 2rem;
-        margin-bottom: 1.5rem;
     }
 
     .textosApertoDeMao p {
         font-size: 1.2rem;
-        margin-bottom: 1.5rem;
     }
 
     .textosApertoDeMao button {
@@ -735,11 +798,11 @@ body {
     }
 
     .nome-advogado {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .info-advogado {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .noticias-grid {
@@ -747,9 +810,10 @@ body {
     }
 
     .snip1418 {
-        min-width: 280px;
+        width: 95%; /* Ajuste a largura percentual */
         max-width: 320px;
-        margin: 10px auto; /* Centraliza os cards */
+        min-width: unset; /* ESSENCIAL */
+        margin: 10px auto;
     }
 
     .snip1418 img {
@@ -757,11 +821,11 @@ body {
     }
 
     .snip1418 h3 {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
 
     .snip1418 p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .footer-container {
@@ -778,10 +842,68 @@ body {
     .footer-item {
         font-size: 1.1rem;
     }
+
+    .linha {
+        padding: 0 15px; /* Já estava 15px, manter */
+    }
+
+    .integranteSociedade {
+        padding: 2rem 1rem; /* Unificar padding lateral para mobile */
+    }
+
+    .noticiasRecentes {
+        padding: 2rem 1rem; /* Unificar padding lateral para mobile */
+    }
+
+    .navbar-collapse {
+        background-color: #C8A663;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 1rem 0; /* Padding interno */
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.8rem 1rem;
+        color: #2D2A22 !important;
+        display: block;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Estilizar o botão de Contato dentro do menu colapsado */
+    .navbar .btn {
+        width: 80%;
+        margin: 0.5rem auto !important;
+        display: block;
+        padding: 0.8rem 1rem;
+    }
 }
 
 
-@media (max-width: 768px) { /* Breakpoint para celulares e tablets em modo retrato */
+@media (max-width: 768px) {
+    .textoPrinc {
+        font-size: 2.5rem;
+    }
+    .pPrinc {
+        font-size: 1rem;
+    }
+    
     /* Porque Confiar na nossa atuação? (Linha do Tempo) - LAYOUT DE CARDS */
     .linha-tempo h1 {
         font-size: 1.8rem;
@@ -789,65 +911,71 @@ body {
         margin-top: 2rem;
     }
 
-    /* OCULTAR A LINHA HORIZONTAL (AUMENTANDO ESPECIFICIDADE) */
     .linha-tempo .linha::before {
         display: none;
     }
 
     .linha {
-        flex-direction: column; /* Empilha os cards verticalmente */
-        gap: 1.5rem; /* Espaçamento entre os cards */
-        padding: 0 15px; /* Ajusta o padding lateral do contêiner */
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 15px;
     }
 
-    /* OCULTAR OS PONTOS DA LINHA DO TEMPO (AUMENTANDO ESPECIFICIDADE) */
     .wrap-item .linha-ponto {
         display: none;
     }
 
     .wrap-item {
-        width: 100%; /* Cada card ocupa a largura total disponível */
-        max-width: 350px; /* Limita a largura máxima para mobile */
-        min-height: auto; /* A altura se ajusta ao conteúdo */
+        width: 100%;
+        max-width: 350px;
+        min-height: auto;
         background-color: var(--card-background-mobile);
         border-radius: var(--card-border-radius);
         padding: var(--card-padding);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 0 auto; /* Centraliza o card */
-        flex-direction: column; /* Garante que os itens dentro do card fiquem em coluna */
+        margin: 0 auto;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: center; /* Centraliza conteúdo dentro do card */
-        text-align: center; /* Centraliza o texto */
+        align-items: center;
+        text-align: center;
     }
 
     /* Redefinir posicionamento para os itens dentro do card */
     .item-superior {
-        position: static; /* Remove posicionamento absoluto */
+        position: static;
         width: auto;
         padding-bottom: 0;
-        margin-bottom: 0.8rem; /* Espaçamento entre título e ícone */
+        margin-bottom: 0.8rem;
         flex-direction: column;
     }
 
     .item-superior .icone img {
-        width: 70px; /* Reduz o tamanho do ícone para mobile */
+        width: 70px;
         height: 70px;
         margin-bottom: 0.6rem;
     }
 
     .item-superior h3 {
-        font-size: 1.2rem; /* Reduz o tamanho do título */
+        font-size: 1.2rem;
     }
 
     .item-inferior {
-        position: static; /* Remove posicionamento absoluto */
+        position: static;
         width: auto;
         padding-top: 0;
     }
 
     .item-inferior p {
-        font-size: 1rem; /* Reduz o tamanho do texto do corpo */
+        font-size: 1rem;
         padding: 0;
+    }
+
+    .faleConosco {
+        width: 100%;
+        max-width: 150px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 15px !important;
     }
 
     /* Ajuste para imagens dos cards de confiança no mobile (se houver estilo inline ou !important) */
@@ -860,29 +988,77 @@ body {
         height: 70px !important;
     }
 
+    .escritorioEspecializado .imagem {
+        width: 95%; 
+        max-width: 400px;
+    }
+
+    .textosApertoDeMao {
+        min-width: unset;
+        width: 95%;
+        max-width: 500px;
+    }
+
+    .textosApertoDeMao p {
+        padding: 0 0.5rem;
+    }
 
     /* Áreas de Atuação (Carrossel) */
     .AreasAtuacao {
         padding-bottom: 2rem;
     }
+
     .background-image h1 {
         font-size: 2rem;
     }
+
     .carrossel-wrapper {
-        padding: 0 0.5rem; /* Menos padding nas laterais para mobile */
+        padding: 0 0.5rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
     }
+
     .scroll-btn {
+        position: absolute;
+        z-index: 3;
+        background: rgba(45, 42, 34, 0.8);
+        color: #F3F0EB;
+        border: none;
         font-size: 1.5rem;
-        padding: 0.2rem 0.5rem;
-        margin: 0 5px; /* Ajusta margem dos botões */
-    }
-    .card {
-        min-width: 250px; /* Tamanho mínimo para mobile */
+        padding: 0.5rem;
+        cursor: pointer;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 8px;
+        transition: background 0.2s;
+        width: auto;
         height: auto;
-        margin: 0 auto; /* Centraliza os cards se não estiverem cheios */
+        min-width: unset;
+        min-height: unset;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    
+    .scroll-btn.left {
+        left: 0.2rem;
+    }
+
+    .scroll-btn.right {
+        right: 0.2rem;
+    }
+
+    .card { /* Tamanho mínimo para mobile */
+        width: 95%;
+        max-width: 280px;
+        min-width: unset;
+    }
+
     .card img {
-        height: 250px; /* Reduz a altura da imagem do card */
+        height: 200px;
+        object-fit: cover;
     }
 
     /* Integrantes da Sociedade */
@@ -890,28 +1066,34 @@ body {
         margin-top: 2rem;
         padding: 1rem 0.5rem;
     }
+
     .tituloIntSoc {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
     }
+
     .integrantes-grid {
         gap: 1.5rem;
     }
+
     .perfil-integrante {
-        width: 95%; /* Ocupa mais largura */
+        width: 95%;
         max-width: 280px;
         padding: 1rem;
     }
+
     .perfil-integrante .img {
         width: 120px;
         height: 120px;
-        border-radius: 50%; /* Faz a imagem redonda, se desejar */
+        border-radius: 50%;
     }
+
     .nome-advogado {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
     }
+
     .info-advogado {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     /* Notícias Recentes */
@@ -919,26 +1101,32 @@ body {
         margin-top: 2rem;
         padding: 1rem 0.5rem;
     }
+
     .tituloNoticias {
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
     }
+
     .noticias-grid {
         gap: 1rem;
     }
+
     .snip1418 {
-        width: 95%;
-        max-width: 320px;
-        margin: 10px auto;
+        width: 98%;
+        max-width: 300px;
+        min-width: unset;
     }
+
     .snip1418 img {
         height: 120px;
     }
+
     .snip1418 h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
+
     .snip1418 p {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     /* Footer */
@@ -946,8 +1134,8 @@ body {
         padding: 0.5rem;
     }
     .footer-logo img {
-        width: 70px;
-        height: 80px;
+        width: 40px;
+        height: 50px;
     }
     .footer-links {
         gap: 0.8rem;
@@ -959,49 +1147,128 @@ body {
         width: 28px;
         height: 28px;
     }
+
+    .tituloAperto {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .textosApertoDeMao p {
+        font-size: 1rem;
+    }
 }
 
 /* Ajustes para telas muito pequenas (ex: iPhones 5/SE, larguras abaixo de 480px) */
 @media (max-width: 480px) {
     .textoPrinc {
-        font-size: 38px;
+        font-size: 2rem;
     }
+
     .pPrinc {
-        font-size: 18px;
+        font-size: 0.9rem;
     }
+
     .background-image h1 {
         font-size: 1.8rem;
     }
+
     .tituloAperto {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
+
     .textosApertoDeMao p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
+
     .tituloIntSoc, .tituloNoticias {
         font-size: 1.6rem;
     }
+
     .perfil-integrante .img {
         width: 100px;
         height: 100px;
     }
+
     .nome-advogado {
-        font-size: 1.2rem;
-    }
-    .info-advogado {
-        font-size: 0.85rem;
-    }
-    .snip1418 h3 {
         font-size: 1rem;
     }
-    .snip1418 p {
+
+    .info-advogado {
         font-size: 0.75rem;
     }
-    .footer-item {
+
+    .snip1418 h3 {
         font-size: 0.9rem;
     }
+
+    .snip1418 p {
+        font-size: 0.65rem;
+    }
+
+    .footer-item {
+        font-size: 0.8rem;
+    }
+
     .footer-item img {
         width: 24px;
         height: 24px;
+    }
+
+    .card {
+        width: 38%;
+        max-width: unset;
+        background-color: var(--card-background-mobile) !important;
+    }
+
+    .card img {
+        height: 180px;
+        object-fit: contain;
+    }
+
+    .scroll-btn {
+        font-size: 1.2rem;
+        padding: 0.4rem;
+    }
+
+    .scroll-btn.left {
+        left: 0;
+    }
+
+    .scroll-btn.right {
+        right: 0;
+    }
+
+    .carrossel-wrapper {
+        padding: 0 0.2rem;
+    }
+
+    .snip1418 {
+        width: 100%;
+        max-width: unset;
+    }
+
+    .inicio,
+    .escritorioEspecializado,
+    .integranteSociedade,
+    .noticiasRecentes {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .imgInicio img {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 380px) {
+    .card {
+        width: 33%;
+        max-width: unset;
+        background-color: var(--card-background-mobile) !important;
+    }
+
+    .card img {
+        height: 123px;
+        object-fit: contain;
     }
 }
