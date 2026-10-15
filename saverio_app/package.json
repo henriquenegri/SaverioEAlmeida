@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:seo": "node --test scripts/seo-config.test.mjs",
+    "check:seo-build": "node scripts/check-seo-build.mjs",
+    "check:publish": "node scripts/check-publish.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.50.0",

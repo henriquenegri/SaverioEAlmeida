@@ -28,5 +28,11 @@ O nome e o perfil do antigo sócio foram removidos, assim como suas duas fotos p
 
 ## Próximos ajustes editoriais
 
-Confirmar o telefone de atendimento do Renato (mantido do site anterior), substituir os assets legados não utilizados por fotografias definitivas e informar o novo Instagram, caso exista. A refatoração local não publica o site automaticamente.
+Contato atualizado para (11) 99208-1799. Domínio oficial: https://saverioadvocacia.com.br. Informar cidade/UF e o novo Instagram, caso exista. A refatoração local não publica o site automaticamente.
+
+## SEO e publicação
+
+Consulte [PUBLICACAO.md](PUBLICACAO.md) para conectar o domínio, publicar e enviar o sitemap ao Search Console. `.env.production` configura o domínio oficial e a indexação dos builds de produção. Use `.env.example` para desenvolvimento, com `noindex`; em hospedagens de prévia, sobrescreva `SITE_INDEXABLE=false`.
+
+Validação: `npm run test:seo` e `npm run check:publish` (este último exige domínio oficial e indexação liberada). As rotas `/robots.txt`, `/sitemap.xml` e `/opengraph-image` são geradas pelo Next.js. A marcação JSON-LD descreve o site e o advogado com os dados confirmados.
 

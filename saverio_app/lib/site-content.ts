@@ -1,7 +1,7 @@
 export const contact = {
-  whatsapp: "https://wa.me/5516996356629",
-  phoneHref: "tel:+5516996356629",
-  phoneLabel: "(16) 99635-6629",
+  whatsapp: "https://wa.me/5511992081799",
+  phoneHref: "tel:+5511992081799",
+  phoneLabel: "(11) 99208-1799",
 };
 
 export const practiceAreas = [
